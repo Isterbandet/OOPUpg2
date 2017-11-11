@@ -14,4 +14,4 @@ class Person:
         self._address = str(address)
 
     def __str__(self):
-        return "Person[name="+self._name,"address="+self._address
+        return Person[self._name,self._address]

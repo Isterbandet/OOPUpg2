@@ -8,11 +8,11 @@ class Student(Person):
 
 
 
-    def getProgram(self,_program):
+    def getProgram(self):
         return self._program
-    def getYear(self,_year):
+    def getYear(self):
         return self._year
-    def getFee(self,_fee):
+    def getFee(self):
         return float(self._fee)
 
     def setProgram(self,program):
