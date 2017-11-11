@@ -1,16 +1,17 @@
+
+
 class Person:
     def __init__(self, name, address):
-        self.name = name
-        self.address = address
-
-
-
-
+        self._name = name
+        self._address = address
 
     def getName(self):
-        return self.name
+        return self._name
     def getAddress(self):
-        return self.address
+        return self._address
 
     def setAddress(self,address):
-        self.address = address
+        self._address = address
+
+    def __str__(self):
+        return str(self._name,self._address)
