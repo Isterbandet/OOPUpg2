@@ -6,12 +6,12 @@ class Person:
         self._address = address
 
     def getName(self):
-        return self._name
+        return str(self._name)
     def getAddress(self):
         return self._address
 
     def setAddress(self,address):
-        self._address = address
+        self._address = str(address)
 
     def __str__(self):
-        return str(self._name,self._address)
+        return "Person[name="+self._name,"address="+self._address

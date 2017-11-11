@@ -13,15 +13,15 @@ class Student(Person):
     def getYear(self,_year):
         return self._year
     def getFee(self,_fee):
-        return self._fee
+        return float(self._fee)
 
     def setProgram(self,program):
         self._program = str(program)
     def setYear(self,year):
-        self._year = int(year)
+        self._year = year
 
     def setFee(self,fee):
-        self._fee = int(fee)
+        self._fee = fee
 
     def __str__(self):
-        return str(self._year,self._program,self._fee)
+        return str(self._program,self._year,self._fee)
