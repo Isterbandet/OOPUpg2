@@ -3,6 +3,8 @@ import unittest
 from person import Person
 from staff import Staff
 from student import Student
+from school import*
+from program import*
 
 class TestPerson(unittest.TestCase):
     def test_person_01_constructor( self ):
@@ -80,6 +82,14 @@ class TestStaff(unittest.TestCase):
         p = Staff("Mark", "Min Gata 1", "Nackademin", 50)
         p.setPay( 125.66 )
         self.assertEqual( p.getPay(), 125.66 )
+
+
+class testCashflow(unittest.TestCase):
+    def testMyPayFunk(self):
+        Yrkeshögskola = School("Yrkeshögskola")
+        Student1=(Student("Name","addres","Program",94,25000))
+        Student2 = (Student("Naame", "adddres", "Prrogram", 1994, 25000))
+        Yrkeshögskola.addStudent()
 
 
 
