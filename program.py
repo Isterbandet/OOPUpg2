@@ -1,8 +1,18 @@
 from student import*
 
 class Program(Student):
-    def __init__(self,name,address,program,year,fee):
-       super().__init__(name,address,program,year,fee)
+    def __init__(self,program):
+        self._program = program
+        self._students = []
+
+    def addStudents(self,name):
+        self._students.append(name)
+
+    def totalSumOfFee(self):
+        totalFeesum = 0
+        for students in self._students:
+            totalFeesum += students.getFee()
+        return totalFeesum
 
 
 

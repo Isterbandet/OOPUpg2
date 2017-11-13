@@ -1,6 +1,6 @@
 from person import *
 class Staff(Person):
-        def __init__(self, name, address, school,pay):
+        def __init__(self, name, address, school, pay):
             super().__init__(name, address)
             self._school = school
 
@@ -12,8 +12,8 @@ class Staff(Person):
 
 
         def getPay(self):
-            return float(self._pay)
-
+            #return float(self._pay)
+            return float("{0:.3f}".format(self._pay))
         def setSchool(self, school):
             self._school= str(school)
 
@@ -23,4 +23,4 @@ class Staff(Person):
             self._pay = pay
 
         def __str__(self):
-            return "Staff[{0},school={1},pay={}]".format(super().__str__(), self.getSchool(),self.getPay())
+            return "Staff[{},school={},pay={}]".format(super().__str__(), self.getSchool(),self.getPay())
