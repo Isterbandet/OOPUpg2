@@ -19,8 +19,8 @@ class Staff(Person):
 
 
 
-        def setFee(self, pay):
+        def setPay(self, pay):
             self._pay = pay
 
         def __str__(self):
-            return 
+            return "Staff[{0},school={1},pay={}]".format(super().__str__(), self.getSchool(),self.getPay())

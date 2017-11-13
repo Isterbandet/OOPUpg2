@@ -8,10 +8,13 @@ class Person:
     def getName(self):
         return str(self._name)
     def getAddress(self):
-        return self._address
+        return str(self._address)
 
     def setAddress(self,address):
-        self._address = str(address)
+        self._address = address
 
     def __str__(self):
-        return Person[self._name,self._address]
+
+        return "Person[name={},address={}]".format(self.getName(),self.getAddress())
+
+

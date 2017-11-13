@@ -21,7 +21,10 @@ class Student(Person):
         self._year = year
 
     def setFee(self,fee):
-        self._fee = fee
+        self._fee = float(fee)
 
     def __str__(self):
-        return str(self._program,self._year,self._fee)
+
+
+
+        return "Student[{0},program={1},year={2},fee={3}]".format(super().__str__(),self.getProgram(),self.getYear(),self.getFee())
