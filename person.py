@@ -7,6 +7,7 @@ class Person:
 
     def getName(self):
         return str(self._name)
+
     def getAddress(self):
         return str(self._address)
 

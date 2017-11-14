@@ -24,7 +24,4 @@ class Student(Person):
         self._fee = float(fee)
 
     def __str__(self):
-
-
-
-        return "Student[{0},program={1},year={2},fee={3}]".format(super().__str__(),self.getProgram(),self.getYear(),self.getFee())
+        return "Student[{},program={},year={},fee={:.2f}]".format(super().__str__(),self.getProgram(),self.getYear(),self.getFee())

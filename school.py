@@ -11,7 +11,7 @@ class School(Staff):
     def addTeacher(self,teacher):
         self.staff.append(teacher)
 
-    def addProfram(self, progeam):
+    def addProgram(self, progeam):
         self.program.append(progeam)
 
     def totalSumOfTeacherSallery(self):

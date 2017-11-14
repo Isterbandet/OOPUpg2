@@ -8,7 +8,7 @@ class Program(Student):
     def addStudents(self,name):
         self._students.append(name)
 
-    def totalSumOfFee(self):
+    def totalSumOfStudentFee(self):
         totalFeesum = 0
         for students in self._students:
             totalFeesum += students.getFee()

@@ -13,14 +13,14 @@ class Staff(Person):
 
         def getPay(self):
             #return float(self._pay)
-            return float("{0:.3f}".format(self._pay))
+            return float(self._pay)
         def setSchool(self, school):
             self._school= str(school)
 
 
 
         def setPay(self, pay):
-            self._pay = pay
+            self._pay = float(pay)
 
         def __str__(self):
-            return "Staff[{},school={},pay={}]".format(super().__str__(), self.getSchool(),self.getPay())
+            return "Staff[{},school={},pay={:.2f}]".format(super().__str__(), self.getSchool(),self.getPay())
