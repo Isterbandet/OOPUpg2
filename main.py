@@ -84,25 +84,30 @@ class TestStaff(unittest.TestCase):
         self.assertEqual( p.getPay(), 125.66 )
 
 
-"""class testCashflow(unittest.TestCase):
-    def testMyPayFunk(self):
-        Yrkeshögskola = School("Yrkeshögskola")
-        Student1=(Student("Name","addres","Program",94,25000))
-        Student2 = (Student("Naame", "adddres", "Prrogram", 1994, 25000))
-        Yrkeshögskola.addStudent()
-"""
-Student1=Student("Name","addres","Program",94,25000)
-Student2=Student("Name","addres","Program",94,25000)
-Program.addStudents(Student1)
-Program.addStudents(Student2)
+
+
+program1 = Program("IoT")
+program2 = Program("FredrikStoltz")
+
+Student1=Student("Name","addres","Program",94,25)
+Student2=Student("Name","addres","Program",94,25)
+
+program1.addStudents(Student1)
+program2.addStudents(Student2)
 
 
 
-Staff1=Staff("Name","addres","Skola",30000)
-Staff2=Staff("Name","addres","Skola",30000)
-School.addTeacher("Naclademin",Staff1)
-School.addTeacher("Nackademin",Staff2)
+school = School("Backademin")
 
-School.getEconomyForSchool()
+school.addProgram(program1)
+school.addProgram(program2)
+
+staff1=Staff("Name","addres","S",25)
+staff2=Staff("Name","addres","Skola",25)
+school.addTeacher(staff1)
+school.addTeacher(staff2)
+
+school.isTheSchollSomethingTobuyAktierFrom()
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
