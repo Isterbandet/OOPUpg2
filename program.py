@@ -5,13 +5,13 @@ class Program(Student):
         self._program = program
         self._students = []
 
-    def addStudents(self,name):
-        self._students.append(name)
+    def addStudents(self,studentObjekt):
+        self._students.append(studentObjekt)
 
     def totalSumOfStudentFee(self):
         totalFeesum = 0
-        for students in self._students:
-            totalFeesum += students.getFee()
+        for student in self._students:
+            totalFeesum += student.getFee()
         return totalFeesum
 
 
