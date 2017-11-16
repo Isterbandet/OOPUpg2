@@ -28,8 +28,8 @@ class School(Staff):
 
     def isTheSchollSomethingTobuyAktierFrom(self):
         if self.getTotalIncomeForTheProgram() < self.totalSumOfTeacherSallery():
-            print("It is time to invest")
+            return ("It is time to invest")
         elif self.getTotalIncomeForTheProgram() == self.totalSumOfTeacherSallery():
-            print ("The school goes +- 0 fire a teacher")
+            return ("The school goes +- 0 fire a teacher")
         elif self.getTotalIncomeForTheProgram() > self.totalSumOfTeacherSallery():
-            print("Do not invest")
+            return ("Do not invest")

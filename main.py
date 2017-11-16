@@ -85,9 +85,102 @@ class TestStaff(unittest.TestCase):
 
 
 
+class testMyOwnStuff(unittest.TestCase):
+    # Här ser jag att de går att räkna ut lätatlönen
+     def test_Teachers_sallery(self):
+        Nackademin = School("Nackademin")
+        staff1=Staff("Mark", "KlassrumC001", "Nackademin", 45000)
+        staff2=Staff("Satanipekele", "sverige", "Nackademin", 1000)
+        Nackademin.addTeacher(staff1)
+        Nackademin.addTeacher(staff2)
+        self.assertEqual( Nackademin.totalSumOfTeacherSallery(),46000)
 
+     def test_Student_FeeeContribution_Different_Programs(self):
+        # Här ser jag att det funkar att lägga in eleverna i 2 olika program. Och att den räknar ut värdet av programmens income.
+
+        Student1 = Student("Anton", "Enköping", "IoT", 94, 50000)
+        Student2 = Student("The", "Man", "Hackeranked", 94, 10000)
+
+        program1 = Program("IoT")
+        program2 = Program("Hackeranked")
+
+        program1.addStudents(Student1)
+        program2.addStudents(Student2)
+
+        school = School("Backademin")
+        school.addProgram(program1)
+        school.addProgram(program2)
+        self.assertEqual(school.getTotalIncomeForTheProgram(), 60000)
+
+
+
+
+     def test_if_itistimeto_Invest_The_Answer_Should_be_No(self):
+        #Det här är bara super Dry
+        school = School("Backademin")
+
+        Student1 = Student("Anton", "Enköping", "IoT", 94, 50000)
+        Student2 = Student("The", "Man", "Hackeranked", 94, 10000)
+        #Lärarlön 60000
+        staff1 = Staff("Mark", "KlassrumC001", "Nackademin", 45000)
+        staff2 = Staff("Satanipekele", "sverige", "Nackademin", 1000)
+        #Elevfee 55000
+        school.addTeacher(staff1)
+        school.addTeacher(staff2)
+        program1 = Program("IoT")
+        program2 = Program("Hackeranked")
+        program1.addStudents(Student1)
+        program2.addStudents(Student2)
+        school.addProgram(program1)
+        school.addProgram(program2)
+        self.assertEqual(school.isTheSchollSomethingTobuyAktierFrom(), "Do not invest")
+
+
+     def test_if_itistimeto_Invest_The_Answer_Should_be_YES(self):
+        # Det här är bara super Dry
+        school = School("Backademin")
+
+        Student1 = Student("Anton", "Enköping", "IoT", 94, 50000)
+        Student2 = Student("The", "Man", "Hackeranked", 94, 10000)
+        # Lärarlön 60000
+        staff1 = Staff("Mark", "KlassrumC001", "Nackademin", 50000)
+        staff2 = Staff("Satanipekele", "sverige", "Nackademin", 60000)
+        # Elevfee 11000
+        school.addTeacher(staff1)
+        school.addTeacher(staff2)
+        program1 = Program("IoT")
+        program2 = Program("Hackeranked")
+        program1.addStudents(Student1)
+        program2.addStudents(Student2)
+        school.addProgram(program1)
+        school.addProgram(program2)
+        self.assertEqual(school.isTheSchollSomethingTobuyAktierFrom(), "It is time to invest")
+
+
+     def test_if_itistimeto_Invest_The_Answer_Should_be_TheSchoolGoesEven(self):
+        # Det här är bara super Dry
+        school = School("Backademin")
+
+        Student1 = Student("Anton", "Enköping", "IoT", 94, 10000)
+        Student2 = Student("The", "Man", "Hackeranked", 94, 10000)
+        # Lärarlön 20000
+        staff1 = Staff("Mark", "KlassrumC001", "Nackademin", 10000)
+        staff2 = Staff("Satanipekele", "sverige", "Nackademin", 10000)
+        # Elevfee 20000
+        school.addTeacher(staff1)
+        school.addTeacher(staff2)
+        program1 = Program("IoT")
+        program2 = Program("Hackeranked")
+        program1.addStudents(Student1)
+        program2.addStudents(Student2)
+        school.addProgram(program1)
+        school.addProgram(program2)
+        self.assertEqual(school.isTheSchollSomethingTobuyAktierFrom(), "The school goes +- 0 fire a teacher")
+
+
+"""
 program1 = Program("IoT")
-program2 = Program("FredrikStoltz")
+program2 = Program("Hackeranked")
 
 Student1=Student("Name","addres","Program",94,25)
 Student2=Student("Name","addres","Program",94,25)
@@ -108,6 +201,7 @@ school.addTeacher(staff1)
 school.addTeacher(staff2)
 
 school.isTheSchollSomethingTobuyAktierFrom()
+"""
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

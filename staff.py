@@ -12,7 +12,7 @@ class Staff(Person):
 
 
         def getPay(self):
-            #return float(self._pay)
+
             return float(self._pay)
         def setSchool(self, school):
             self._school= str(school)
